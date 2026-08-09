@@ -1,6 +1,6 @@
 cask "kuali" do
-  version "0.1.0"
-  sha256 "5038f8ccef34322a703fbded2a9ff18f63d6ed71ff24c8fc2d783b7e73eadcda"
+  version "0.1.1"
+  sha256 "15b823eef8491964ed31bca650b6e768422efbcfb19c782a04225a92f47760b1"
 
   url "https://github.com/igarrux/kuali/releases/download/v#{version}/Kuali_#{version}_aarch64.dmg",
       verified: "github.com/igarrux/kuali/"
@@ -25,8 +25,7 @@ cask "kuali" do
   ]
 
   caveats <<~EOS
-    Kuali is ad-hoc signed but not yet notarized by Apple. To open it after
-    installation, review and run this command explicitly:
+    To open Kuali after installation, run:
 
       xattr -dr com.apple.quarantine /Applications/Kuali.app
   EOS
