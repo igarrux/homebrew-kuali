@@ -1,6 +1,6 @@
 cask "kuali" do
-  version "0.1.12"
-  sha256 "7afd697484de0fcf8df6318fa8c2ceef9503a8c947352ce346411dc2d22f09ad"
+  version "0.1.13"
+  sha256 "5d905da7c959f1f6b26c02e69ac6f065753ad41fb055efdc54a7e43f33dc7927"
 
   url "https://github.com/igarrux/kuali/releases/download/v#{version}/Kuali_#{version}_aarch64.dmg",
       verified: "github.com/igarrux/kuali/"
