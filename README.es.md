@@ -15,7 +15,7 @@ xattr -dr com.apple.quarantine /Applications/Kuali.app
 ```
 
 El nombre completo hace que Homebrew confíe únicamente en el cask de Kuali y
-añada el tap automáticamente. Actualmente requiere macOS 11 o posterior en un
+añada el tap automáticamente. Actualmente requiere macOS 13.4 o posterior en un
 Mac con Apple Silicon.
 
 Kuali está firmado de manera ad hoc, pero aún no está notarizado por Apple. El
