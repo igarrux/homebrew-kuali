@@ -1,6 +1,6 @@
 cask "kuali" do
-  version "0.1.14"
-  sha256 "c876bad7e35fe3ae07bb7d6f1a0865503e03e3c598fbad64909409b293ba8055"
+  version "0.1.16"
+  sha256 "f0044cce1edcc6af904c6dfaf9c2110d7f21f5ce92f59101656e02a52f1eb6fd"
 
   url "https://github.com/igarrux/kuali/releases/download/v#{version}/Kuali_#{version}_aarch64.dmg",
       verified: "github.com/igarrux/kuali/"
@@ -15,9 +15,22 @@ cask "kuali" do
 
   auto_updates true
   depends_on arch: :arm64
-  depends_on macos: :big_sur
+  depends_on macos: :ventura
 
   app "Kuali.app"
+
+  preflight_steps do
+    run "/bin/sh", args: ["-c", <<~SH]
+      version=$(/usr/bin/sw_vers -productVersion) || exit 1
+      major=${version%%.*}
+      minor=${version#*.}
+      minor=${minor%%.*}
+      if [ "$major" -lt 13 ] || { [ "$major" -eq 13 ] && [ "$minor" -lt 4 ]; }; then
+        echo "Kuali requires macOS 13.4 or later." >&2
+        exit 1
+      fi
+    SH
+  end
 
   zap trash: [
     "~/.kuali",

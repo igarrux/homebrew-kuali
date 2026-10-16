@@ -14,7 +14,7 @@ xattr -dr com.apple.quarantine /Applications/Kuali.app
 ```
 
 The fully qualified name makes Homebrew trust only the Kuali cask and adds this
-tap automatically. Kuali currently requires macOS 11 or newer on Apple Silicon.
+tap automatically. Kuali currently requires macOS 13.4 or newer on Apple Silicon.
 
 Kuali is ad-hoc signed but not yet notarized by Apple. The second command
 explicitly removes the quarantine attribute only from the installed
